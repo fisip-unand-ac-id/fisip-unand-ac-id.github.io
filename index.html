@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FISIP UNAND – Fakultas Ilmu Sosial dan Ilmu Politik</title>
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<link rel="icon" href="https://fisip.unand.ac.id/wp-content/uploads/2026/03/cropped-site_Logo_fisip-removebg-preview-32x32.png" sizes="32x32" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==================== RESET & BASE ==================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', sans-serif; font-size: 14px; color: #333; background: #fff; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* ==================== TOP INFO BAR ==================== */
+#topbar {
+  background: #0a2d6e;
+  color: #fff;
+  font-size: 12.5px;
+  padding: 7px 0;
+  border-bottom: 1px solid #1a4080;
+}
+#topbar .tb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+#topbar .tb-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c9ddf5;
+}
+#topbar .tb-item i { color: #6ab0f5; font-size: 12px; }
+#topbar .tb-item a { color: #c9ddf5; transition: color .2s; }
+#topbar .tb-item a:hover { color: #fff; }
+
+/* ==================== HEADER / LOGO BAR ==================== */
+#header-logo {
+  background: #fff;
+  padding: 14px 0;
+  border-bottom: 2px solid #e8edf5;
+  box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+#header-logo .hl-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header-logo .hl-inner .site-logo img {
+  height: 72px;
+  width: auto;
+}
+#header-logo .hl-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 12.5px;
+  color: #555;
+}
+#header-logo .hl-right .hl-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+#header-logo .hl-right .hl-contact span { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+#header-logo .hl-right .hl-contact i { color: #0a2d6e; }
+#header-logo .hl-right .oldweb-btn {
+  background: #0a2d6e;
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background .2s;
+  white-space: nowrap;
+}
+#header-logo .hl-right .oldweb-btn:hover { background: #1a5bbf; }
+
+/* ==================== MAIN NAVIGATION ==================== */
+#main-nav {
+  background: #0a2d6e;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+#main-nav .nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: stretch;
+}
+#main-nav > .nav-inner > ul {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+#main-nav > .nav-inner > ul > li {
+  position: relative;
+}
+#main-nav > .nav-inner > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 15px 12px;
+  transition: background .2s;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+#main-nav > .nav-inner > ul > li > a:hover,
+#main-nav > .nav-inner > ul > li.menu-open > a {
+  background: #1a5bbf;
+}
+#main-nav > .nav-inner > ul > li > a .caret {
+  font-size: 9px;
+  opacity: .7;
+  margin-left: 2px;
+}
+
+/* Dropdown Level 1 */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background: #fff;
+  border-top: 3px solid #1a5bbf;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  z-index: 10000;
+  animation: fadeDown .15s ease;
+}
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+#main-nav li:hover > .nav-dropdown { display: block; }
+.nav-dropdown > li > a {
+  display: block;
+  color: #333;
+  font-size: 12.5px;
+  padding: 9px 16px;
+  border-bottom: 1px solid #f0f3f8;
+  transition: background .15s, color .15s;
+  position: relative;
+}
+.nav-dropdown > li > a:hover { background: #0a2d6e; color: #fff; }
+.nav-dropdown > li.has-child > a::after { content: '›'; position: absolute; right: 12px; font-size: 15px; }
+
+/* Dropdown Level 2 */
+.nav-dropdown2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 230px;
+  background: #fff;
+  border-top: 3px solid #1a5bbf;
+  box-shadow: 4px 6px 20px rgba(0,0,0,.12);
+  z-index: 10001;
+  animation: fadeDown .15s ease;
+}
+.nav-dropdown > li:hover > .nav-dropdown2 { display: block; }
+.nav-dropdown2 > li > a {
+  display: block;
+  color: #333;
+  font-size: 12px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #f0f3f8;
+  transition: background .15s, color .15s;
+  position: relative;
+}
+.nav-dropdown2 > li > a:hover { background: #0a2d6e; color: #fff; }
+.nav-dropdown2 > li.has-child2 > a::after { content: '›'; position: absolute; right: 10px; font-size: 15px; }
+
+/* Dropdown Level 3 */
+.nav-dropdown3 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 230px;
+  background: #fff;
+  border-top: 3px solid #1a5bbf;
+  box-shadow: 4px 6px 20px rgba(0,0,0,.12);
+  z-index: 10002;
+}
+.nav-dropdown2 > li:hover > .nav-dropdown3 { display: block; }
+.nav-dropdown3 > li > a {
+  display: block;
+  color: #333;
+  font-size: 12px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #f0f3f8;
+  transition: background .15s, color .15s;
+}
+.nav-dropdown3 > li > a:hover { background: #0a2d6e; color: #fff; }
+
+/* ==================== VIDEO HERO ==================== */
+#hero-video {
+  position: relative;
+  background: #000e29;
+  overflow: hidden;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#hero-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .55;
+}
+#hero-video .hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 40px 20px;
+}
+#hero-video .hero-overlay h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+  margin-bottom: 14px;
+}
+#hero-video .hero-overlay p {
+  font-size: 16px;
+  color: #c5d8f0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#hero-video .hero-thumb {
+  position: absolute;
+  inset: 0;
+  background: url('https://fisip.unand.ac.id/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-30-at-10.45.36.jpeg') center/cover no-repeat;
+  opacity: .45;
+}
+
+/* ==================== SECTION WRAPPER ==================== */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 64px 0; }
+.section-alt { background: #f4f7fc; }
+
+.sec-head { margin-bottom: 42px; }
+.sec-head .label-top {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1a5bbf;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.sec-head h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0a2d6e;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.sec-head .divider {
+  width: 48px;
+  height: 4px;
+  background: #1a5bbf;
+  border-radius: 2px;
+}
+.sec-head.center { text-align: center; }
+.sec-head.center .divider { margin: 0 auto; }
+
+/* ==================== PIMPINAN ==================== */
+#pimpinan .pim-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.pim-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,30,80,.1);
+  transition: transform .25s, box-shadow .25s;
+  text-align: center;
+}
+.pim-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,30,80,.18); }
+.pim-card .pim-img { height: 240px; overflow: hidden; background: #0a2d6e; }
+.pim-card .pim-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .4s; }
+.pim-card:hover .pim-img img { transform: scale(1.05); }
+.pim-card .pim-info { padding: 20px 16px 24px; }
+.pim-card .pim-info h2 { font-family: 'Raleway', sans-serif; font-size: 16px; font-weight: 700; color: #0a2d6e; margin-bottom: 6px; }
+.pim-card .pim-info p { font-size: 12.5px; color: #666; }
+
+/* ==================== STATS ==================== */
+#stats { background: #0a2d6e; padding: 36px 0; }
+#stats .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+.stat-box { color: #fff; }
+.stat-box .num { font-family: 'Raleway', sans-serif; font-size: 36px; font-weight: 800; color: #f0c84a; display: block; margin-bottom: 6px; }
+.stat-box h3 { font-size: 11.5px; color: #bcd4f0; font-weight: 400; line-height: 1.4; }
+
+/* ==================== PROFIL ==================== */
+#profil .profil-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+#profil .profil-img img { width: 100%; height: 360px; object-fit: cover; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,30,80,.15); }
+#profil .profil-text h2 { font-family: 'Raleway', sans-serif; font-size: 26px; font-weight: 800; color: #0a2d6e; margin-bottom: 16px; }
+#profil .profil-text p { font-size: 14px; line-height: 1.85; color: #555; margin-bottom: 14px; }
+.btn-blue { display: inline-block; background: #0a2d6e; color: #fff; font-size: 13px; font-weight: 600; padding: 10px 26px; border-radius: 5px; margin-top: 6px; transition: background .2s; }
+.btn-blue:hover { background: #1a5bbf; }
+
+/* ==================== BERITA ==================== */
+#berita .news-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.news-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,30,80,.09); transition: transform .22s, box-shadow .22s; }
+.news-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,30,80,.16); }
+.news-card .nc-img { position: relative; height: 168px; overflow: hidden; background: #c9d8ee; }
+.news-card .nc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.news-card:hover .nc-img img { transform: scale(1.07); }
+.news-card .nc-img a.img-link { display: block; height: 100%; }
+.nc-date { position: absolute; bottom: 0; left: 0; background: #0a2d6e; color: #fff; text-align: center; padding: 5px 10px 7px; font-size: 10.5px; line-height: 1.2; font-weight: 700; min-width: 46px; }
+.nc-date .d { font-size: 22px; display: block; line-height: 1; }
+.nc-body { padding: 14px 15px 18px; }
+.nc-author { font-size: 11px; color: #999; margin-bottom: 7px; }
+.nc-body h3 { font-size: 13px; font-weight: 700; color: #0a2d6e; line-height: 1.55; margin-bottom: 10px; }
+.nc-body h3 a:hover { color: #1a5bbf; }
+.nc-more { font-size: 12px; color: #1a5bbf; font-weight: 600; }
+.nc-more:hover { text-decoration: underline; }
+.pagination-wrap { margin-top: 34px; display: flex; justify-content: center; align-items: center; gap: 6px; }
+.pagination-wrap a, .pagination-wrap span { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 4px; border: 1px solid #d0daea; font-size: 13px; color: #0a2d6e; background: #fff; transition: background .15s, color .15s; }
+.pagination-wrap a:hover, .pagination-wrap .current { background: #0a2d6e; color: #fff; border-color: #0a2d6e; }
+
+/* ==================== AKSES CEPAT ==================== */
+#akses .akses-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+#akses .jadwal-img img { width: 100%; border-radius: 8px; box-shadow: 0 3px 14px rgba(0,30,80,.12); }
+#akses .jadwal-label { font-family: 'Raleway', sans-serif; font-size: 20px; font-weight: 700; color: #0a2d6e; margin-top: 14px; text-align: center; }
+#akses .akses-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.akses-link-item { display: block; border-radius: 7px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,30,80,.09); transition: transform .2s, box-shadow .2s; }
+.akses-link-item:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0,30,80,.16); }
+.akses-link-item img { width: 100%; height: 90px; object-fit: cover; }
+
+/* ==================== ACARA MENDATANG ==================== */
+#acara .acara-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.acara-card { display: flex; gap: 14px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,30,80,.08); transition: box-shadow .2s; }
+.acara-card:hover { box-shadow: 0 6px 22px rgba(0,30,80,.14); }
+.acara-card img { width: 100px; min-height: 120px; object-fit: cover; flex-shrink: 0; }
+.acara-card .ac-info { padding: 14px 14px 14px 0; display: flex; align-items: flex-start; }
+.acara-card .ac-info h3 { font-size: 13px; font-weight: 700; color: #0a2d6e; line-height: 1.5; }
+
+/* ==================== ALUMNI TESTIMONIAL ==================== */
+#alumni .alumni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.alumni-card { background: #fff; border-radius: 10px; padding: 26px; box-shadow: 0 2px 14px rgba(0,30,80,.09); display: flex; gap: 20px; align-items: flex-start; transition: box-shadow .2s; }
+.alumni-card:hover { box-shadow: 0 8px 28px rgba(0,30,80,.15); }
+.alumni-card .al-img { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 3px solid #0a2d6e; }
+.alumni-card .al-img img { width: 100%; height: 100%; object-fit: cover; }
+.alumni-card .al-body blockquote { font-size: 13px; font-style: italic; color: #555; line-height: 1.75; margin-bottom: 12px; }
+.alumni-card .al-body blockquote::before { content: '\201C'; font-size: 20px; color: #1a5bbf; }
+.alumni-card .al-body cite { font-size: 13px; font-weight: 700; color: #0a2d6e; font-style: normal; }
+
+/* ==================== GALERI ==================== */
+#galeri .gal-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.gal-item { overflow: hidden; border-radius: 6px; height: 140px; background: #c0d0e8; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.gal-item:hover img { transform: scale(1.1); }
+.gal-grid-row2 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 10px; }
+
+/* ==================== VIDEO PROFIL ==================== */
+#video-profil .vp-thumb { position: relative; display: block; cursor: pointer; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,30,80,.2); width: 100%; max-width: 680px; margin: 0 auto; }
+#video-profil .vp-thumb img { width: 100%; height: 360px; object-fit: cover; }
+#video-profil .vp-thumb .play-overlay { position: absolute; inset: 0; background: rgba(0,20,70,.35); display: flex; align-items: center; justify-content: center; transition: background .2s; }
+#video-profil .vp-thumb:hover .play-overlay { background: rgba(0,20,70,.5); }
+#video-profil .vp-thumb .play-btn { width: 72px; height: 72px; background: rgba(255,255,255,.2); border: 3px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+#video-profil .vp-thumb:hover .play-btn { background: rgba(255,255,255,.35); }
+#video-profil .vp-thumb .play-btn i { font-size: 26px; color: #fff; margin-left: 5px; }
+
+/* ==================== PARTNER LOGOS ==================== */
+#partners .partner-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; margin-top: 20px; }
+#partners .partner-logos img { height: 60px; width: auto; object-fit: contain; filter: grayscale(30%); opacity: .85; transition: filter .2s, opacity .2s; }
+#partners .partner-logos img:hover { filter: none; opacity: 1; }
+
+/* ==================== KERJA SAMA ==================== */
+#kerjasama .ks-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px; }
+#kerjasama .ks-logos img { height: 64px; width: auto; object-fit: contain; filter: grayscale(20%); transition: filter .2s; }
+#kerjasama .ks-logos img:hover { filter: none; }
+
+/* ==================== FOOTER ==================== */
+#footer { background: #071e4a; color: #a8bdd8; padding: 54px 0 0; }
+#footer .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 20px 48px; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: 40px; }
+#footer .f-brand .f-logo img { height: 68px; width: auto; margin-bottom: 16px; }
+#footer .f-brand p { font-size: 13px; line-height: 1.85; color: #7a9cc0; }
+#footer h4 { font-family: 'Raleway', sans-serif; color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #1a5bbf; }
+#footer ul li { margin-bottom: 9px; }
+#footer ul li a { font-size: 13px; color: #7a9cc0; transition: color .15s; }
+#footer ul li a:hover { color: #f0c84a; }
+.f-contact p { font-size: 13px; color: #7a9cc0; line-height: 2; }
+.f-contact .f-social { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.f-contact .f-social a { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #0a2d6e; color: #fff; font-size: 14px; transition: background .2s; }
+.f-contact .f-social a:hover { background: #1a5bbf; }
+.footer-bottom { background: #04132d; text-align: center; padding: 14px 20px; font-size: 12px; color: #4a6a90; border-top: 1px solid #0e2d5a; }
+
+/* ==================== MOBILE NAV ==================== */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; margin-left: auto; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1100px) {
+  #main-nav > .nav-inner > ul > li > a { font-size: 11.5px; padding: 15px 9px; }
+}
+@media (max-width: 960px) {
+  #stats .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  #profil .profil-inner, #akses .akses-inner { grid-template-columns: 1fr; }
+  #berita .news-grid { grid-template-columns: repeat(2, 1fr); }
+  #alumni .alumni-grid { grid-template-columns: 1fr; }
+  #galeri .gal-grid, .gal-grid-row2 { grid-template-columns: repeat(3, 1fr); }
+  #footer .footer-grid { grid-template-columns: 1fr 1fr; }
+  #acara .acara-wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  #main-nav > .nav-inner > ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #0a2d6e; padding: 10px 0; }
+  #main-nav > .nav-inner > ul.open { display: flex; }
+  #main-nav > .nav-inner > ul > li > a { padding: 12px 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .nav-dropdown, .nav-dropdown2, .nav-dropdown3 { position: static; box-shadow: none; border-top: none; background: #0d3a8a; animation: none; }
+  .nav-dropdown > li > a, .nav-dropdown2 > li > a { color: #c5d8f5; border-color: rgba(255,255,255,.07); padding-left: 28px; }
+  #hero-video { height: 300px; }
+  #hero-video .hero-overlay h1 { font-size: 24px; }
+  #pimpinan .pim-grid { grid-template-columns: 1fr; }
+  #berita .news-grid { grid-template-columns: 1fr; }
+  #stats .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  #galeri .gal-grid, .gal-grid-row2 { grid-template-columns: repeat(2, 1fr); }
+  #footer .footer-grid { grid-template-columns: 1fr; }
+  #header-logo .hl-right .hl-contact { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP INFO BAR -->
+<div id="topbar">
+  <div class="tb-inner">
+    <span class="tb-item">
+      <i class="fa fa-envelope"></i>
+      <a href="mailto:sekretariat@soc.unand.ac.id">sekretariat@soc.unand.ac.id</a>
+    </span>
+    <span class="tb-item">
+      <i class="fa fa-phone"></i>
+      081261576200
+    </span>
+  </div>
+</div>
+
+<!-- HEADER LOGO BAR -->
+<header id="header-logo">
+  <div class="hl-inner">
+    <div class="site-logo">
+      <a href="https://fisip.unand.ac.id/">
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2021/10/Logo-fisip-unand-1-1.png" alt="FISIP UNAND">
+      </a>
+    </div>
+    <div class="hl-right">
+      <div class="hl-contact">
+        <span><i class="fa fa-phone"></i> +62 81261576200</span>
+        <span><i class="fa fa-envelope"></i> sekretariat@soc.unand.ac.id</span>
+      </div>
+      <a href="https://fisip.unand.ac.id/old/en/" class="oldweb-btn" target="_blank">Old Website</a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN NAVIGATION -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="https://fisip.unand.ac.id/">Beranda</a></li>
+
+      <li>
+        <a href="#">Tentang Kami <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="https://fisip.unand.ac.id/message-from-dean/">Pesan dari Dekan</a></li>
+          <li class="has-child">
+            <a href="https://fisip.unand.ac.id/about-me/">Dekan Fakultas</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://fisip.unand.ac.id/laporan-akhir-jabatan-dekan-periode-2020-2024/">Laporan Akhir Jabatan Dekan Periode 2020-2024</a></li>
+            </ul>
+          </li>
+          <li class="has-child">
+            <a href="https://fisip.unand.ac.id/message-from-dean-2/">Sejarah FISIP</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://fisip.unand.ac.id/vision-mission-and-goals/">Visi, Misi, dan Tujuan</a></li>
+              <li><a href="https://fisip.unand.ac.id/strategic-plan-2020-2024-2/">Rencana Strategis</a></li>
+              <li><a href="https://fisip.unand.ac.id/job-description/">Deskripsi Pekerjaan</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Akademik &amp; Administrasi <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li class="has-child">
+            <a href="#">Akademik</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://fisip.unand.ac.id/academic-senate-faculty/">Senat Akademik Fakultas</a></li>
+              <li><a href="https://fisip.unand.ac.id/sk-mengajar/">SK Mengajar</a></li>
+              <li><a href="https://fisip.unand.ac.id/kalender-akademik/">Kalender Akademik</a></li>
+              <li><a href="https://fisip.unand.ac.id/akreditasi-program-studi/">Akreditasi Program Studi</a></li>
+              <li><a href="https://fisip.unand.ac.id/blangko-akademik/">Blangko Akademik</a></li>
+              <li><a href="https://fisip.unand.ac.id/pangkalan-data/">Pangkalan Data</a></li>
+            </ul>
+          </li>
+          <li><a href="https://fisip.unand.ac.id/standard-operating-procedure-sop/">Prosedur Operasional Standar</a></li>
+          <li><a href="https://fisip.unand.ac.id/learning-facilities/">Sarana Pembelajaran</a></li>
+          <li><a href="https://fisip.unand.ac.id/facilities-reservation-services/">Layanan Pemesanan Fasilitas</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Departemen <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li class="has-child">
+            <a href="#">Sarjana</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://sosiologi.fisip.unand.ac.id/" target="_blank">Sosiologi</a></li>
+              <li><a href="https://antropologi.fisip.unand.ac.id/" target="_blank">Antropologi</a></li>
+              <li><a href="https://ilmupolitik.fisip.unand.ac.id/" target="_blank">Ilmu Politik</a></li>
+              <li><a href="https://administrasipublik.fisip.unand.ac.id/" target="_blank">Administrasi Publik</a></li>
+              <li><a href="https://hi.fisip.unand.ac.id/" target="_blank">Hubungan Internasional</a></li>
+              <li><a href="https://komunikasi.fisip.unand.ac.id/index.php" target="_blank">Ilmu Komunikasi</a></li>
+            </ul>
+          </li>
+          <li class="has-child">
+            <a href="https://fisip.unand.ac.id/magister/">Magister</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://pascasarjana.fisip.unand.ac.id/index.php?lang=en" target="_blank">Pascasarjana</a></li>
+            </ul>
+          </li>
+          <li class="has-child">
+            <a href="https://fisip.unand.ac.id/doktor/">Doktor</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://fisip.unand.ac.id/program-doktor-sosiologi/">Sosiologi</a></li>
+              <li><a href="https://doktorkebijakan.fisip.unand.ac.id/" target="_blank">Studi Kebijakan</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li><a href="https://fisip.unand.ac.id/gallery/">Staf Fakultas</a></li>
+
+      <li>
+        <a href="#">Penelitian &amp; Pengabdian Masyarakat <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="https://fisip.unand.ac.id/lecturer-books/">Buku Dosen</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Sistem Penjaminan Mutu <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="https://fisip.unand.ac.id/sudah-diterima-di-fisip-unand-ini-informasi-untukmu/">Peraturan Rektor tentang Sistem Jaminan Mutu</a></li>
+          <li><a href="https://fisip.unand.ac.id/edom-genap-2024-2025/">EDOM Genap 2024/2025</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Alumni <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="https://fisip.unand.ac.id/old/en/alumni/data-alumni/tahun-2020">2020</a></li>
+          <li><a href="https://fisip.unand.ac.id/old/en/alumni/data-alumni/tahun-2022">2021</a></li>
+          <li><a href="https://fisip.unand.ac.id/old/en/alumni/data-alumni/tahun-2023">2022</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Jurnal <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="https://jsa.fisip.unand.ac.id/index.php/jsa" target="_blank">Jurnal Sosiologi Andalas</a></li>
+          <li><a href="https://jurnalantropologi.fisip.unand.ac.id/index.php/jantro" target="_blank">Jurnal Antropologi</a></li>
+          <li><a href="https://jdpl.fisip.unand.ac.id/index.php/jdpl/" target="_blank">Jurnal Demokrasi dan Politik Lokal</a></li>
+          <li><a href="https://jakp.fisip.unand.ac.id/index.php/jakp/index" target="_blank">Jurnal Administtrasi &amp; Kebijakan Publik</a></li>
+          <li><a href="https://palito.fisip.unand.ac.id/index.php/palito" target="_blank">PALITO (Politics, Humanities, Laws, International</a></li>
+          <li><a href="https://ranahkomunikasi.fisip.unand.ac.id/index.php/rk" target="_blank">Jurnal Ranah Komunikasi</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="https://fisip.unand.ac.id/profil-ppid-fisip-universitas-andalas/">PPID FISIP <span class="caret">▾</span></a>
+        <ul class="nav-dropdown">
+          <li class="has-child">
+            <a href="https://fisip.unand.ac.id/informasi-publik-yang-wajib-disediakan-dan-diumumkan-secara-berkala/">Informasi Publik yang wajib Disediakan dan Diumumkan Secara Berkala</a>
+            <ul class="nav-dropdown2">
+              <li><a href="https://fisip.unand.ac.id/struktur-organisasi/">Struktur Organisasi</a></li>
+              <li><a href="https://fisip.unand.ac.id/visi-misi/">Visi Misi PPID FISIP</a></li>
+              <li><a href="https://fisip.unand.ac.id/tugas-tanggung-jawab-ppid-fisip/">Tugas &amp; Tanggung Jawab PPID FISIP</a></li>
+              <li><a href="https://fisip.unand.ac.id/regulasi/">Regulasi PPID</a></li>
+              <li><a href="https://fisip.unand.ac.id/sop-layanan-informasi-publik/">SOP Layanan Informasi Publik</a></li>
+            </ul>
+          </li>
+          <li class="has-child">
+            <a href="https://fisip.unand.ac.id/informasi-yang-wajib-tersedia-setiap-saat/">Informasi Yang wajib Tersedia Setiap Saat</a>
+            <ul class="nav-dropdown2">
+              <li class="has-child2">
+                <a href="https://fisip.unand.ac.id/daftar-informasi-publik-dip-fisip-universitas-andalas-2024/">Daftar Informasi Publik (DIP) FISIP Universitas Andalas 2025</a>
+                <ul class="nav-dropdown3">
+                  <li><a href="https://fisip.unand.ac.id/peraturan-dekan/">Peraturan Dekan</a></li>
+                  <li><a href="https://fisip.unand.ac.id/peraturan-senat-fakultas/">Peraturan Senat Fakultas</a></li>
+                </ul>
+              </li>
+              <li><a href="https://fisip.unand.ac.id/tata-cara-pengajuan-keberatan/">Tata Cara Pengajuan Keberatan</a></li>
+              <li><a href="https://fisip.unand.ac.id/tata-cara-penyelesaian-sengketa-informasi/">Tata Cara Penyelesaian Sengketa Informasi</a></li>
+              <li><a href="https://fisip.unand.ac.id/tata-cara-permohonan-informasi/">Tata Cara Permohonan Informasi</a></li>
+              <li><a href="https://fisip.unand.ac.id/tata-cara-pengaduan-penyalahgunaan-wewenang/">Tata Cara Pengaduan Penyalahgunaan Wewenang</a></li>
+              <li><a href="https://fisip.unand.ac.id/regulasi-umum-pengelolaan-informasi-publik/">Peraturan</a></li>
+            </ul>
+          </li>
+          <li><a href="https://fisip.unand.ac.id/informasi-serta-merta/">Informasi Serta Merta</a></li>
+          <li><a href="https://fisip.unand.ac.id/informasi-dikecualikan/">Informasi Dikecualikan</a></li>
+        </ul>
+      </li>
+
+      <li><a href="https://fisip.unand.ac.id/annex/">ANNEX</a></li>
+      <li><a href="https://fisip.unand.ac.id/contact-us/">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO VIDEO -->
+<section id="hero-video">
+  <div class="hero-thumb"></div>
+  <video autoplay muted loop playsinline poster="https://fisip.unand.ac.id/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-30-at-10.45.36.jpeg">
+    <source src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/Profil-Fisip-Teaser.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay">
+    <h1>Fakultas Ilmu Sosial<br>dan Ilmu Politik</h1>
+    <p>Universitas Andalas — Bersama Menuju ASEAN</p>
+  </div>
+</section>
+
+<!-- PIMPINAN FAKULTAS -->
+<section id="pimpinan" class="section">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2>Pimpinan Fakultas Ilmu Sosial &amp; Ilmu Politik Universitas Andalas</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="pim-grid">
+      <div class="pim-card">
+        <div class="pim-img">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/02/fisip-dekan-1-1024x1024.png" alt="Dr.Jendrius, M.Si">
+        </div>
+        <div class="pim-info">
+          <h2>Dr.Jendrius, M.Si</h2>
+          <p>Dekan FISIP Universitas Andalas</p>
+        </div>
+      </div>
+      <div class="pim-card">
+        <div class="pim-img">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/02/fisip-wd1-1-1024x1024.png" alt="Dr. Tengku Rika Valentina, S. IP, MA">
+        </div>
+        <div class="pim-info">
+          <h2>Dr. Tengku Rika Valentina, S. IP, MA</h2>
+          <p>Wakil Dekan I FISIP Universitas Andalas</p>
+        </div>
+      </div>
+      <div class="pim-card">
+        <div class="pim-img">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/02/fisip-wd-2-1-1024x1024.png" alt="Dr. Yevita Nurti, M.Si">
+        </div>
+        <div class="pim-info">
+          <h2>Dr. Yevita Nurti, M.Si</h2>
+          <p>Wakil Dekan II FISIP Universitas Andalas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATISTIK -->
+<div id="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-box"><span class="num">3415</span><h3>Mahasiswa Sarjana</h3></div>
+      <div class="stat-box"><span class="num">173</span><h3>Mahasiswa Pascasarjana</h3></div>
+      <div class="stat-box"><span class="num">32</span><h3>Mahasiswa Program Doktor</h3></div>
+      <div class="stat-box"><span class="num">8</span><h3>Profesor</h3></div>
+      <div class="stat-box"><span class="num">109</span><h3>Dosen</h3></div>
+      <div class="stat-box"><span class="num">55</span><h3>Staf Fakultas</h3></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFIL FISIP -->
+<section id="profil" class="section section-alt">
+  <div class="wrap">
+    <div class="profil-inner">
+      <div class="profil-img">
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/02/IMG_1040.JPG-scaled.jpeg" alt="Profil FISIP UNAND">
+      </div>
+      <div class="profil-text">
+        <div class="sec-head">
+          <span class="label-top">FISIP</span>
+          <h2>Profil FISIP</h2>
+          <div class="divider"></div>
+        </div>
+        <p>Fakultas Ilmu Sosial dan Ilmu Politik Universitas Andalas senantiasa berkomitmen untuk menjadi salah satu institusi pendidikan tinggi terbaik di bidang Ilmu Sosial dan Ilmu Politik di kawasan ASEAN. Untuk mewujudkan hal tersebut, diperlukan kolaborasi dan sinergi yang kuat di lingkungan Fakultas Ilmu Sosial dan Ilmu Politik Universitas Andalas, serta dengan seluruh pemangku kepentingan yang terlibat.</p>
+        <p>Mari berkenalan dengan para dosen yang terus memberikan dukungan bagi Fakultas Ilmu Sosial dan Ilmu Politik Universitas Andalas dalam upaya meningkatkan kualitas dan berinovasi melalui bidang dan keahlian masing-masing.</p>
+        <a href="https://fisip.unand.ac.id/profil-singkat//" class="btn-blue">Selengkapnya</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BERITA -->
+<section id="berita" class="section">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="label-top">FISIP</span>
+      <h2>Berita</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-apel-pagi-dan-upacara-bersama-awal-tahun-2026/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-19-at-11.45.24-580x435.jpeg" alt="">
+          </a>
+          <div class="nc-date"><span class="d">19</span>January</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-apel-pagi-dan-upacara-bersama-awal-tahun-2026/">FISIP Universitas Andalas Gelar Apel Pagi dan Upacara Bersama Awal Tahun 2026</a></h3>
+          <a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-apel-pagi-dan-upacara-bersama-awal-tahun-2026/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/fisip-unand-sambut-calon-mahasiswa-dalam-andalas-x-plorer-2026/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/IMG_2744-580x435.jpg" alt="">
+          </a>
+          <div class="nc-date"><span class="d">18</span>January</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/fisip-unand-sambut-calon-mahasiswa-dalam-andalas-x-plorer-2026/">FISIP UNAND Sambut Calon Mahasiswa dalam Andalas X-Plorer 2026</a></h3>
+          <a href="https://fisip.unand.ac.id/fisip-unand-sambut-calon-mahasiswa-dalam-andalas-x-plorer-2026/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-roadshow-program-doktor-sosiologi-ke-fisip-universitas-bengkulu/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/DSC03281-580x435.jpg" alt="">
+          </a>
+          <div class="nc-date"><span class="d">09</span>January</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-roadshow-program-doktor-sosiologi-ke-fisip-universitas-bengkulu/">FISIP Universitas Andalas Gelar Roadshow Program Doktor Sosiologi ke FISIP Universitas Bengkulu</a></h3>
+          <a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-roadshow-program-doktor-sosiologi-ke-fisip-universitas-bengkulu/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/pengumuman-layanan-akademik-semester-genap-2025-2026/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-06-at-12.30.26-1-580x435.jpeg" alt="">
+          </a>
+          <div class="nc-date"><span class="d">06</span>January</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/pengumuman-layanan-akademik-semester-genap-2025-2026/">Pengumuman Layanan Akademik Semester Genap 2025/2026</a></h3>
+          <a href="https://fisip.unand.ac.id/pengumuman-layanan-akademik-semester-genap-2025-2026/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/pengumuman-keringanan-ukt-korban-bencana/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/12/Bencana-Alam-2-580x435.png" alt="">
+          </a>
+          <div class="nc-date"><span class="d">17</span>December</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">admfisip</div>
+          <h3><a href="https://fisip.unand.ac.id/pengumuman-keringanan-ukt-korban-bencana/">PENGUMUMAN KERINGANAN UKT KORBAN BENCANA</a></h3>
+          <a href="https://fisip.unand.ac.id/pengumuman-keringanan-ukt-korban-bencana/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/program-magister-ilmu-komunikasi-fisip-universitas-andalas-raih-akreditasi-unggul/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/12/Sertifikat-95007-6902skbanptaks3vii2025_sign-1-1-580x435.png" alt="">
+          </a>
+          <div class="nc-date"><span class="d">16</span>December</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/program-magister-ilmu-komunikasi-fisip-universitas-andalas-raih-akreditasi-unggul/">Program Magister Ilmu Komunikasi FISIP Universitas Andalas Raih Akreditasi Unggul</a></h3>
+          <a href="https://fisip.unand.ac.id/program-magister-ilmu-komunikasi-fisip-universitas-andalas-raih-akreditasi-unggul/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/perkuat-sinergi-akademik-fisip-universitas-andalas-teken-kerja-sama-dengan-fisip-uns/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-18-at-09.41.31-580x435.jpeg" alt="">
+          </a>
+          <div class="nc-date"><span class="d">15</span>December</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/perkuat-sinergi-akademik-fisip-universitas-andalas-teken-kerja-sama-dengan-fisip-uns/">Perkuat Sinergi Akademik, FISIP Universitas Andalas Teken Kerja Sama dengan FISIP UNS</a></h3>
+          <a href="https://fisip.unand.ac.id/perkuat-sinergi-akademik-fisip-universitas-andalas-teken-kerja-sama-dengan-fisip-uns/" class="nc-more">Read more</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="nc-img">
+          <a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-pelatihan-pelayanan-prima-untuk-tingkatkan-kualitas-layanan-institusi/" class="img-link">
+            <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/12/FSP08916-580x435.jpg" alt="">
+          </a>
+          <div class="nc-date"><span class="d">15</span>December</div>
+        </div>
+        <div class="nc-body">
+          <div class="nc-author">Humas FISIP UNAND</div>
+          <h3><a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-pelatihan-pelayanan-prima-untuk-tingkatkan-kualitas-layanan-institusi/">FISIP Universitas Andalas Gelar Pelatihan Pelayanan Prima untuk Tingkatkan Kualitas Layanan Institusi</a></h3>
+          <a href="https://fisip.unand.ac.id/fisip-universitas-andalas-gelar-pelatihan-pelayanan-prima-untuk-tingkatkan-kualitas-layanan-institusi/" class="nc-more">Read more</a>
+        </div>
+      </div>
+    </div>
+    <div class="pagination-wrap">
+      <span class="current">1</span>
+      <a href="https://fisip.unand.ac.id/page/2/">2</a>
+      <a href="https://fisip.unand.ac.id/page/3/">3</a>
+      <span>...</span>
+      <a href="https://fisip.unand.ac.id/page/23/">23</a>
+    </div>
+  </div>
+</section>
+
+<!-- AKSES CEPAT -->
+<section id="akses" class="section section-alt">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="label-top">FISIP</span>
+      <h2>Akses Cepat</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="akses-inner">
+      <div>
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/Pembayaran-Genap-768x650.png" alt="Jadwal Pembayaran" class="jadwal-img">
+        <div class="jadwal-label">Jadwal Penting</div>
+      </div>
+      <div class="akses-links">
+        <a href="https://portal.unand.ac.id/" target="_blank" class="akses-link-item">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/Portal-Akademik.png" alt="Portal Akademik">
+        </a>
+        <a href="https://ppid.unand.ac.id/" target="_blank" class="akses-link-item">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/pengaduan-online.jpg" alt="Pengaduan Online">
+        </a>
+        <a href="https://merdeka.akademik.unand.ac.id/mbkm/" target="_blank" class="akses-link-item">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/WEB-Merdeka.png" alt="Merdeka Belajar">
+        </a>
+        <a href="https://pustaka.fisip.unand.ac.id/" target="_blank" class="akses-link-item">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/SITUS-WEB-PERUSAHAAN.jpg" alt="Pustaka FISIP">
+        </a>
+        <a href="https://soc.ilearn.unand.ac.id/" target="_blank" class="akses-link-item">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/8ILEARNOVER-1.png" alt="iLearn UNAND">
+        </a>
+        <a href="https://www.sciencedirect.com/" target="_blank" class="akses-link-item">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/1SDOVER-1.png" alt="ScienceDirect">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACARA MENDATANG -->
+<section id="acara" class="section">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="label-top">Pengumuman</span>
+      <h2>Acara Mendatang</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="acara-wrap">
+      <div class="acara-card">
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-19-at-16.17.46-600x849.jpeg" alt="ICGCS 2023">
+        <div class="ac-info"><h3>The 2nd International Conference on Gender, Culture and Society (ICGCS) 2023</h3></div>
+      </div>
+      <div class="acara-card">
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/IAPA-600x849.jpeg" alt="FISIP-IAPA 2023">
+        <div class="ac-info"><h3>International Conference FISIP-IAPA 2023</h3></div>
+      </div>
+      <div class="acara-card">
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/IAPA2-600x849.jpeg" alt="Lomba Menulis">
+        <div class="ac-info"><h3>Lomba Menulis</h3></div>
+      </div>
+      <div class="acara-card">
+        <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/Formasi-CPNS-600x849.jpeg" alt="Penerimaan CPNS">
+        <div class="ac-info"><h3>Penerimaan CPNS</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALUMNI TESTIMONIAL -->
+<section id="alumni" class="section section-alt">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="label-top">Ulasan</span>
+      <h2>Alumni</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-card">
+        <div class="al-img">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-10-at-17.40.42-2.jpeg" alt="Resti Fajria, S.AP">
+        </div>
+        <div class="al-body">
+          <blockquote>Saya telah mendapatkan pengalaman yang benar-benar luar biasa di fakultas. Fakultas ini berperan besar dalam membentuk perkembangan akademik dan pribadi saya. Para dosen serta staf yang berdedikasi selalu menjadi sumber inspirasi dan dukungan sepanjang perjalanan studi saya. Komitmen mereka dalam mentransfer ilmu pengetahuan serta menumbuhkan kemampuan berpikir kritis sangatlah berharga bagi saya.</blockquote>
+          <cite>Resti Fajria, S.AP</cite>
+        </div>
+      </div>
+      <div class="alumni-card">
+        <div class="al-img">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/Wisuda.jpeg" alt="Faruq El Pikaso, S.Sos">
+        </div>
+        <div class="al-body">
+          <blockquote>Pada hakikatnya, fakultas bukan sekadar sebuah institusi pendidikan; melainkan sebuah komunitas yang membina dan mentransformasi diri, yang telah mempersiapkan saya untuk menghadapi masa depan. Saya bersyukur atas pengetahuan, pengalaman, dan persahabatan yang saya peroleh selama menempuh pendidikan di sini.</blockquote>
+          <cite>Faruq El Pikaso, S.Sos</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="section">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2>Galeri</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/DSC07522-600x540.jpg" alt="Galeri 1"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/DSC_6237-600x540.jpg" alt="Galeri 2"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2024/12/n3-600x540.png" alt="Galeri 3"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-30-at-16.07.19_56f7765d-600x540.jpg" alt="Galeri 4"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/48AE6401-7C2E-4410-8F50-BC43622D0B55-600x540.jpeg" alt="Galeri 5"></div>
+    </div>
+    <div class="gal-grid-row2">
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/Wisuda-IV-2-600x540.jpg" alt="Galeri 6"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/DSC06650-600x540.jpg" alt="Galeri 7"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/DSC06445-600x540.jpg" alt="Galeri 8"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/07E2B641-F842-4569-B74B-2B65E65B8432-600x540.jpeg" alt="Galeri 9"></div>
+      <div class="gal-item"><img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/DSC05865-600x540.jpg" alt="Galeri 10"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO PROFIL FISIP -->
+<section id="video-profil" class="section section-alt">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2>Vidio Profil FISIP</h2>
+      <div class="divider"></div>
+    </div>
+    <a href="https://www.youtube.com/watch?v=X0yRcC5v7WM" target="_blank" class="vp-thumb">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-30-at-10.45.36.jpeg" alt="Video Profil FISIP UNAND">
+      <div class="play-overlay">
+        <div class="play-btn"><i class="fa fa-play"></i></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PARTNER LOGOS -->
+<section id="partners" class="section">
+  <div class="wrap">
+    <div class="partner-logos">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/tutwuri.png" alt="Tut Wuri Handayani">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/logo-kampus-merdeka.png" alt="Kampus Merdeka">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/downlo.png" alt="Logo">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/unand-emas-small1.png" alt="UNAND">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/ristekdikti-300x280-1.png" alt="Ristekdikti">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2023/10/logo_ppid.gif" alt="PPID">
+    </div>
+  </div>
+</section>
+
+<!-- KERJA SAMA -->
+<section id="kerjasama" class="section section-alt">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2>Kerja Sama</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="ks-logos">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/OIP.jpg" alt="Kerja Sama 1">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/th.jpg" alt="Kerja Sama 2">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/OIP-1.jpg" alt="Kerja Sama 3">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/OIP-3.jpg" alt="Kerja Sama 4">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/OIP-2.jpg" alt="Kerja Sama 5">
+      <img src="https://fisip.unand.ac.id/wp-content/uploads/2025/01/R.png" alt="Kerja Sama 6">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo">
+        <a href="https://fisip.unand.ac.id/">
+          <img src="https://fisip.unand.ac.id/wp-content/uploads/2021/08/hal-2-Logo-fisip.png" alt="FISIP UNAND">
+        </a>
+      </div>
+      <h4>Alamat</h4>
+      <p>Fakultas Ilmu Sosial dan Ilmu Politik.<br>Universitas Andalas, Limau Manis<br>Padang, Sumatera Barat</p>
+    </div>
+    <div>
+      <h4>Menu Utama</h4>
+      <ul>
+        <li><a href="https://fisip.unand.ac.id/">Beranda</a></li>
+        <li><a href="https://fisip.unand.ac.id/message-from-dean/">Tentang Kami</a></li>
+        <li><a href="https://fisip.unand.ac.id/gallery/">Staf Fakultas</a></li>
+        <li><a href="https://fisip.unand.ac.id/profil-ppid-fisip-universitas-andalas/">PPID FISIP</a></li>
+        <li><a href="https://fisip.unand.ac.id/annex/">ANNEX</a></li>
+        <li><a href="https://fisip.unand.ac.id/contact-us/">Kontak</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Departemen</h4>
+      <ul>
+        <li><a href="https://sosiologi.fisip.unand.ac.id/" target="_blank">Sosiologi</a></li>
+        <li><a href="https://antropologi.fisip.unand.ac.id/" target="_blank">Antropologi</a></li>
+        <li><a href="https://ilmupolitik.fisip.unand.ac.id/" target="_blank">Ilmu Politik</a></li>
+        <li><a href="https://administrasipublik.fisip.unand.ac.id/" target="_blank">Administrasi Publik</a></li>
+        <li><a href="https://hi.fisip.unand.ac.id/" target="_blank">Hubungan Internasional</a></li>
+        <li><a href="https://komunikasi.fisip.unand.ac.id/index.php" target="_blank">Ilmu Komunikasi</a></li>
+      </ul>
+    </div>
+    <div class="f-contact">
+      <h4>Hubungi Kami</h4>
+      <p>
+        CP &nbsp;&nbsp;&nbsp;: Resa (Sekretaris Dekan)<br>
+        WA &nbsp;: +6281261576200<br>
+        Email : sekretariat@soc.unand.ac.id<br>
+        Hari &nbsp;: Senin – Jumat<br>
+        Waktu : 08:00 – 16:00 WIB (UTC+7)
+      </p>
+      <h4 style="margin-top:20px;">Ikuti Selanjutnya</h4>
+      <div class="f-social">
+        <a href="https://instagram.com/fisipunand" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@fisipunandofficial" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@fisipunand2651" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61562179865423" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/fisipunandoffc" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2023 | Fakultas Ilmu Sosial dan Ilmu Politik | Universitas Andalas
+  </div>
+</footer>
+
+</body>
+</html>
